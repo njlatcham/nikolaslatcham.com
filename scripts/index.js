@@ -1,5 +1,16 @@
 import recipes from "./recipes.json" with {type: 'json'}
 
+// Descriptor text like "large dark green tops", or nothing at all when an
+// ingredient's descriptor lists are all empty (so no empty <p> with a margin).
+const descriptorMarkup = (descriptors = []) => {
+  const text = descriptors
+    .flatMap(({ size, types, piece, other }) => [size.join(', '), types.join('/'), piece.join(', '), other.join(', ')])
+    .filter(Boolean)
+    .join(' ');
+
+  return text ? `<p class="ingredient__desc">${text}</p>` : '';
+};
+
 const recipeMarkup = recipes.map( recipe => 
   `<div id="${recipe.name.replaceAll(' ', '-')}" class="recipe">
     <div class="recipe__banner">
@@ -24,7 +35,7 @@ const recipeMarkup = recipes.map( recipe =>
             <div class="ingredient__row ${ingredient.optional ? 'ingredient__row--optional' : ''}">
               <input class="checkbox" type="checkbox">
               <h6 class="chip chip--ingredient">${ingredient.name}</h6>
-              ${ingredient.descriptors?.length ? `<p class="ingredient__desc">${ingredient.descriptors.map(descriptor => `${descriptor.size}`)} ${ingredient.descriptors.map(descriptor => `${descriptor.types.length > 1 ? descriptor.types.map(type => `${type}`).join('/') : `${descriptor.types}`}`)} ${ingredient.descriptors.map(descriptor => `${descriptor.piece}`)} ${ingredient.descriptors.map(descriptor => `${descriptor.other}`)}</p>` : ''}
+              ${descriptorMarkup(ingredient.descriptors)}
               <div class="divider divider--short"></div>
               ${ingredient.quantity.map(quantor => `
                 <p class="chip chip--${quantor.name}">${quantor.quantity}${quantor.short}</p>
@@ -42,7 +53,7 @@ const recipeMarkup = recipes.map( recipe =>
                   <li class="sub-recipe__item">
                     <input class="checkbox" type="checkbox">
                     <h6 class="chip chip--ingredient">${optional_ingredient.name}</h6>
-                    <p class="ingredient__desc">${optional_ingredient.descriptors.map(descriptor => `${descriptor.size}`)} ${optional_ingredient.descriptors.map(descriptor => `${descriptor.types.length > 1 ? descriptor.types.map(type => `${type}`).join('/') : `${descriptor.types}`}`)} ${optional_ingredient.descriptors.map(descriptor => `${descriptor.piece}`)} ${optional_ingredient.descriptors.map(descriptor => `${descriptor.other}`)}</p>
+                    ${descriptorMarkup(optional_ingredient.descriptors)}
                     <div class="divider divider--short"></div>
                     ${optional_ingredient.quantity.map(quantor => `<p class="chip chip--${quantor.name}">${quantor.quantity}${quantor.short}</p>`).join('<p>&colon;</p>')}
                   </li>
@@ -50,10 +61,9 @@ const recipeMarkup = recipes.map( recipe =>
                 </ul>
                 <ol class="sub-recipe__steps">
                   ${ingredient.optional_instructions.map(optional_instruction => `<li class="step">
-                  <div class="step__header">
+                  <div class="step__header sub-step__header">
                     <h6>${optional_instruction.title}</h6>
-                    <div class="divider divider--short"></div>
-                    <div>
+                    <div class="step__ingredients">
                       ${optional_instruction.ingredients.map(ingredient => `<span class="step__ingredient">${ingredient}</span>`).join('')}
                     </div>
                   </div>
@@ -75,7 +85,7 @@ const recipeMarkup = recipes.map( recipe =>
             <div class="step__header">
               <h6>${instruction.title}</h6>
               <div class="divider divider--short"></div>
-              <div>
+              <div class="step__ingredients">
                 ${instruction.ingredients.map(ingredient => `<span class="step__ingredient">${ingredient}</span>`).join('')}
               </div>
             </div>

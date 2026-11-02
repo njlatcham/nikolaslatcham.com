@@ -1,0 +1,294 @@
+/*
+  Base styles, loaded on every page before that page's own CSS file:
+    index.html    css/base.css + css/index.css
+    recipes.html  css/base.css + css/recipes.css
+
+  Naming: BEM (Block__Element--Modifier)
+    .block              a standalone component     .recipe
+    .block__element     a part of that block       .recipe__toggle
+    .block--modifier    a variation or state       .recipe__toggle--open
+
+  Sections:
+    1. Tokens
+    2. Base (reset + plain HTML elements)
+    3. Layout
+    4. Shared blocks (used on every page)
+
+  Breakpoints (CSS variables can't be used in media queries):
+    medium  max-width: 750px
+    small   max-width: 450px
+  Each block keeps its own media queries right below it.
+
+  url() paths are relative to this file, hence ../resources/.
+*/
+
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+
+:root {
+  /* Palette. Each colour has four tiers:
+       base    the main colour; large text, fills, accents
+       bright  readable small text and links on the dark background
+       soft    mid-tone backgrounds (chips, cards); use dark text on top
+       pale    light pastel backgrounds; use dark text on top */
+  --color-green:  #2c6b3e;  --color-green-bright:  #5fcb7d;  --color-green-soft:  #68ba7d;  --color-green-pale:  #8ed09c;
+  --color-blue:   #2c5f90;  --color-blue-bright:   #6eb6ff;  --color-blue-soft:   #67aaed;  --color-blue-pale:   #8cc3fc;
+  --color-red:    #bd383a;  --color-red-bright:    #fc5950;  --color-red-soft:    #e68580;  --color-red-pale:    #f8a49e;
+  --color-orange: #e77412;  --color-orange-bright: #fa934e;  --color-orange-soft: #e88e4f;  --color-orange-pale: #fca76d;
+  --color-yellow: #f2bb25;  --color-yellow-bright: #fdc94b;  --color-yellow-soft: #dfb546;  --color-yellow-pale: #ecc663;
+  --color-purple: #7b4cb4;  --color-purple-bright: #c399ff;  --color-purple-soft: #b392e3;  --color-purple-pale: #c9aff4;
+
+  /* Roles: what the colours are used for. Point these at the palette. */
+  --color-bg: #080f1f;
+  --color-fg: #fff;
+  --color-highlight: var(--color-green);
+
+  --color-chip-bg: #282442;
+  --color-chip-fg: #ff7f00;
+  --color-grams: #d8a24f;
+  --color-millilitres: #1c374e;
+  --color-amount: #bf4629;
+
+  --color-check: #5fa051;
+  --color-check-border: #9ca3af;
+  --color-check-border-empty: #777;
+
+  --font-mono: 'Space Mono', monospace;
+
+  --rule: 2px solid var(--color-fg);
+  --space-section: 100px;
+}
+
+
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* 62.5% of the browser default (16px) = 10px, so 1rem = 10px. */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: var(--font-mono);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+section {
+  margin: 2.4rem 0;
+}
+
+h1 { font-size: 4.4rem; }
+h2 { font-size: 3.4rem; }
+h3 { font-size: 2.8rem; }
+h4 { font-size: 2.4rem; }
+h5 { font-size: 2rem; }
+h6 { font-size: 1.8rem; }
+p  { font-size: 1.4rem; }
+
+ul {
+  list-style: none;
+}
+
+ol li::marker {
+  font-size: 1.8rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid var(--color-fg);
+  border-left: 1px solid var(--color-fg);
+  color: var(--color-fg);
+  padding: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   3. Layout
+   ========================================================================== */
+
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 75px auto;
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 10px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ==========================================================================
+   4. Shared blocks
+   ========================================================================== */
+
+/* Divider: decorative horizontal or vertical rule
+   <div class="divider divider--short"></div> */
+
+.divider {
+  height: 2px;
+  width: 85.69px;
+  margin: 2.4rem 0;
+  background-color: var(--color-fg);
+}
+
+.divider--short {
+  width: 20px;
+  margin: auto 1rem;
+}
+
+.divider--full {
+  width: 100%;
+  margin: auto 0;
+}
+
+.divider--vertical {
+  width: 2px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 1rem;
+}
+
+@media (max-width: 450px) {
+  .divider {
+    margin: 25px 0;
+  }
+
+  /* Re-state the modifiers so the rule above doesn't override them. */
+  .divider--short { margin: auto 1rem; }
+  .divider--full { margin: auto 0; }
+  .divider--vertical { margin: 0 1rem; }
+}
+
+
+/* Contact bar: name + phone/email, at the top and bottom of every page */
+
+.contact-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-bar__name {
+  color: var(--color-fg);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.contact-bar__details {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 2rem;
+}
+
+.contact-bar__email {
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.2s;
+}
+
+.contact-bar__email:hover {
+  border-bottom-color: var(--color-fg);
+}
+
+@media (max-width: 450px) {
+  .contact-bar {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-bar__name,
+  .contact-bar__details {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* Hero: the big opening header */
+
+.hero {
+  margin: var(--space-section) 0;
+}
+
+.hero__top {
+  display: flex;
+  align-items: center;
+}
+
+.hero__highlight {
+  color: var(--color-highlight);
+}
+
+@media (max-width: 450px) {
+  .hero {
+    margin: 125px 0;
+  }
+}
+
+
+/* Social: row of icon links */
+
+.social {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.social__icon {
+  width: 27px;
+  height: 27px;
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  background-position: center;
+}
+
+.social__icon--github    { background-image: url('../resources/images/github-brands.svg'); }
+.social__icon--linkedin  { background-image: url('../resources/images/linkedin-brands.svg'); }
+.social__icon--instagram { background-image: url('../resources/images/instagram-brands.svg'); }

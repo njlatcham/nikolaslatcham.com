@@ -1,0 +1,239 @@
+/*
+  Recipes page styles (recipes.html). Loaded after base.css, so it can use the tokens
+  and shared blocks defined there. Breakpoints: 750px and 450px.
+*/
+
+
+/* ==========================================================================
+   Recipes page blocks
+   ========================================================================== */
+
+/* Recipe: a collapsible card. JS toggles the --open modifiers. */
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe {
+  border-left: var(--rule);
+  border-top: var(--rule);
+  border-radius: 1rem;
+  padding: 1rem 2.6rem;
+  margin: 2rem 0;
+}
+
+.recipe__banner {
+  position: relative;
+}
+
+.recipe__meta,
+.recipe__equipment {
+  display: flex;
+}
+
+.recipe__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('../resources/images/down-chevron.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.recipe__toggle--open {
+  transform: rotate(180deg);
+}
+
+.recipe__body {
+  display: flex;
+  box-sizing: border-box;
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease;
+
+  /* Widen the box to the left so the sub-recipe toggles (which sit
+     outside the ingredient list) aren't clipped by overflow: hidden. */
+  padding-left: 6.2rem;
+  margin-left: -6.2rem;
+}
+
+.recipe__ingredients {
+  width: 40%;
+}
+
+.recipe__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 2rem;
+}
+
+
+/* Chip: small coloured label for ingredient names and quantities */
+
+.chip {
+  padding: 0.2rem 0.8rem;
+  border-radius: 3px;
+  margin: 0.7rem 0;
+  color: var(--color-bg);
+}
+
+.chip--ingredient {
+  background-color: var(--color-green-bright);
+}
+
+/* These names come from "quantity[].name" in recipes.json. */
+.chip--grams       { background-color: var(--color-yellow-bright); }
+.chip--millilitres { background-color: var(--color-blue-bright); }
+.chip--amount      { background-color: var(--color-red-bright); }
+
+
+/* Checkbox: custom ingredient tick box */
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-check-border);
+  border-radius: 0.25rem;
+  color: var(--color-bg);
+  accent-color: var(--color-green-bright);
+  cursor: pointer;
+}
+
+.checkbox:not(:checked) {
+  appearance: none;
+  border-color: var(--color-check-border-empty);
+  border-radius: 3px;
+}
+
+
+/* Ingredient: one line of the ingredient list. --optional rows open a sub-recipe. */
+
+.ingredient {
+  position: relative;
+}
+
+.ingredient__row {
+  display: flex;
+  align-items: center;
+}
+
+.ingredient__desc {
+  margin-left: 1rem;
+}
+
+.ingredient__toggle {
+  position: absolute;
+  top: 7px;
+  left: -52px;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('../resources/images/down-chevron.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.ingredient__toggle--open {
+  transform: rotate(180deg);
+}
+
+
+/* Sub-recipe: the collapsible recipe inside an optional ingredient */
+
+.sub-recipe {
+  box-sizing: border-box;
+  height: 0;
+  overflow: hidden;
+  padding: 0 6rem 0 3rem;
+  transition: height 300ms ease;
+}
+
+.sub-recipe__item {
+  display: flex;
+  align-items: center;
+}
+
+.sub-recipe__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1.6rem;
+  margin: 0 0 0 1.8rem;
+}
+
+
+/* Step: one instruction card */
+
+.step {
+  margin: 1rem 0;
+  border-left: var(--rule);
+  border-top: var(--rule);
+  border-radius: 1rem;
+  padding: 1rem 2rem 0;
+}
+
+.step__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.step__header h6 { flex-shrink: 0; }
+
+.sub-step__header {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sub-step__header h6 {
+  padding: 0 0 1rem 0;
+  flex-shrink: 0;
+}
+
+.step__ingredients {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step__ingredient {
+  /* background-color: var(--color-chip-bg); */
+  color: var(--color-green-bright);
+  border: 1px solid var(--color-green-bright);
+  border-radius: 2px;
+  padding: 0.5rem 0.8rem;
+  margin: 0.3rem 0.3rem 0.3rem 0;
+}
+
+.step__ingredient:last-child {
+  margin-right: 0;
+}
+
+.step__list {
+  width: 100%;
+  padding-left: 2.4rem;
+}
+
+.step__item {
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+  font-size: 1.4rem;
+  list-style: circle;
+}
+
+
+/* Converter: unit conversion inputs */
+
+.converter__grid,
+.converter__fields {
+  display: flex;
+}

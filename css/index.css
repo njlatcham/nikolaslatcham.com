@@ -1,0 +1,315 @@
+/*
+  Home page styles (index.html). Loaded after base.css, so it can use the tokens
+  and shared blocks defined there. Breakpoints: 750px and 450px.
+*/
+
+
+/* ==========================================================================
+   Home page blocks
+   ========================================================================== */
+
+/* About */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  margin: var(--space-section) 0;
+}
+
+.about__text {
+  width: 66%;
+}
+
+@media (max-width: 750px) {
+  .about {
+    margin: 50px 0;
+  }
+
+  .about__text {
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  .about {
+    width: 100%;
+  }
+
+  .about__text {
+    width: 100%;
+  }
+}
+
+
+/* Projects: write-ups with screenshots, alternating left and right */
+
+.projects__link {
+  color: var(--accent);
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.3s;
+}
+
+.projects__link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Each project's link colour. Add one line per new project. */
+.projects__link--mei        { --accent: #3a4c81; }
+.projects__link--hiwatt     { --accent: #551A8B; }
+.projects__link--flora      { --accent: #cf0019; }
+.projects__link--weave      { --accent: #e472e4; }
+.projects__link--cryptorial { --accent: #0565d6; }
+
+.projects__figure {
+  margin: var(--space-section) 0;
+}
+
+.projects__figure--right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.projects__media {
+  width: 66%;
+  height: 66%;
+}
+
+@media (max-width: 750px) {
+  .projects__media {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .projects__text {
+    padding-bottom: 1.2rem;
+  }
+
+  .projects__link {
+    font-size: 2rem;
+  }
+
+  .projects__figure {
+    margin: 0;
+  }
+
+  .projects__figure--hide-small {
+    display: none;
+  }
+}
+
+
+/* Skills: groups of tech logos. --right groups mirror to the right edge. */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0;
+}
+
+.skills__group {
+  margin: 2.4rem;
+}
+
+.skills__group--right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.skills__title {
+  width: 325px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-fg);
+}
+
+.skills__group--right .skills__title {
+  text-align: right;
+}
+
+.skills__list {
+  display: flex;
+  width: 750px;
+  justify-content: space-between;
+}
+
+.skills__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 33%;
+  padding: 25px 0;
+  transition-duration: 0.3s;
+}
+
+.skills__group--right .skills__item {
+  align-items: flex-end;
+}
+
+.skills__item:hover {
+  transform: translateY(-5%);
+}
+
+.skills__icon {
+  width: 75px;
+  height: 75px;
+}
+
+.skills__label {
+  width: 75px;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .skills {
+    margin: 50px 0;
+  }
+
+  .skills__group {
+    padding: 2.4rem 0;
+  }
+
+  .skills__list {
+    width: 100%;
+  }
+
+  /* Same selectors as above so these win on small screens. */
+  .skills__item,
+  .skills__group--right .skills__item {
+    width: 25%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .skills {
+    margin: 0;
+    width: 100%;
+  }
+
+  .skills__title {
+    font-size: 2rem;
+    width: 50%;
+  }
+
+  .skills__label {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* Contact form */
+
+.contact {
+  margin: var(--space-section) auto;
+  min-width: 500px;
+  max-width: 1000px;
+}
+
+.contact__title {
+  font-size: 2rem;
+}
+
+.contact__text {
+  font-size: 2rem;
+  margin-bottom: 100px;
+}
+
+.contact__form,
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__input,
+.contact__message {
+  border: none;
+  border-bottom: var(--rule);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.contact__input {
+  width: 50%;
+  min-width: 250px;
+}
+
+.contact__message {
+  max-width: 100%;
+  border-left: var(--rule);
+  padding: 20px;
+  resize: none;
+}
+
+.contact__input:focus,
+.contact__message:focus,
+.contact__submit:focus {
+  outline: none;
+}
+
+.contact__submit {
+  width: 20%;
+  min-width: 150px;
+  padding: 10px;
+  border: var(--rule);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-size: 2rem;
+  transition-duration: 0.3s;
+}
+
+.contact__submit:hover {
+  background-color: var(--color-fg);
+  color: var(--color-bg);
+}
+
+@media (max-width: 750px) {
+  .contact {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  .contact__submit {
+    width: 33%;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact {
+    margin: 75px 0;
+  }
+
+  .contact__text {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .contact__input {
+    width: 100%;
+  }
+
+  .contact__input,
+  .contact__message {
+    font-size: 1.6rem;
+  }
+
+  .contact__message {
+    border: var(--rule);
+  }
+
+  .contact__submit {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

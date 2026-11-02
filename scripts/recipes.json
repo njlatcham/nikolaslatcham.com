@@ -468,5 +468,1159 @@
 				"para": "the soup can be frozen, without the cream, for up to 3 months. defrost the soup in the refrigerator for 12 hours and then reheat it on the stovetop over medium heat until hot. once heated through, add the cream and bring to a simmer before serving."
 			}
 		]
+	},
+	{
+		"name": "cajun shrimp linguine",
+		"tags": ["dinner", "pasta"],
+		"serves": 4,
+		"equipment": ["mixing bowl", "large pan", "large pot", "cutting board", "knife"],
+		"ingredients": [
+			{
+				"name": "shrimp",
+				"descriptors": [
+					{
+						"types": ["frozen"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 454
+					}
+				]
+			},
+			{
+				"name": "italian seasoning",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 10
+					}
+				]
+			},
+			{
+				"name": "cajun seasoning",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 10
+					}
+				]
+			},
+			{
+				"name": "paprika",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "salt",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "pepper",
+				"descriptors": [
+					{
+						"types": ["black"],
+						"size": ["ground"],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "olive oil",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 30
+					}
+				]
+			},
+			{
+				"name": "butter",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 30
+					}
+				]
+			},
+			{
+				"name": "broth",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["or white wine"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 80
+					}
+				]
+			},
+			{
+				"name": "red pepper flakes",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["or 1 hot chili pepper, deseeded"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 15
+					}
+				]
+			},
+			{
+				"name": "cream",
+				"descriptors": [
+					{
+						"types": ["heavy"],
+						"size": [],
+						"piece": [],
+						"other": ["optional"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 180
+					}
+				]
+			},
+			{
+				"name": "parmesan",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["to taste"]
+					}
+				],
+				"instructions": ["grated"],
+				"quantitators": [],
+				"quantity": []
+			},
+			{
+				"name": "linguine",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 454
+					}
+				]
+			},
+			{
+				"name": "shallot",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["diced"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "garlic",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["cloves"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 4
+					}
+				]
+			},
+			{
+				"name": "parsley",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 30
+					}
+				]
+			},
+			{
+				"name": "lemon juice",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 15
+					}
+				]
+			}
+		],
+		"instructions": [
+			{
+				"step": 1,
+				"para": ["add shrimp to a bowl.", "add salt, cajun seasoning, italian seasoning, pepper, and paprika, then mix."],
+				"ingredients": ["shrimp", "salt", "cajun seasoning", "italian seasoning", "pepper", "paprika"],
+				"title": "season shrimp"
+			},
+			{
+				"step": 2,
+				"para": ["add olive oil to a pan over medium-high heat, add shrimp and cook, flipping after 2-3 minutes.", "remove from the pan and set aside."],
+				"ingredients": ["olive oil", "shrimp"],
+				"title": "cook shrimp"
+			},
+			{
+				"step": 3,
+				"para": ["cook the linguine in salted boiling water following the package instructions, since cooking time varies with the size and brand.", "drain, then toss with the sauce once it's ready."],
+				"ingredients": ["linguine"],
+				"title": "cook linguine"
+			},
+			{
+				"step": 4,
+				"para": ["add a little extra olive oil and the butter to the pan, then the shallot, over medium heat.", "after 2 minutes, add the garlic and red pepper flakes or chili pepper.", "deglaze with the broth or white wine, and boil the liquid down to about 1/3 of the original amount.", "add the cream and parmesan, and cook the cream down until the sauce thickens.", "add more seasoning to taste.", "add the lemon juice.", "add the shrimp."],
+				"ingredients": ["olive oil", "butter", "shallot", "garlic", "red pepper flakes", "broth", "cream", "parmesan", "lemon juice", "shrimp"],
+				"title": "make sauce"
+			},
+			{
+				"step": 5,
+				"para": ["serve with extra parmesan, parsley, and pepper."],
+				"ingredients": ["parmesan", "parsley", "pepper"],
+				"title": "serve"
+			}
+		],
+		"notes": [
+			{
+				"title": "Cream",
+				"para": "the cream is optional; without it you get a lighter, brothier sauce."
+			}
+		]
+	},
+	{
+		"name": "cajun chicken linguine",
+		"tags": ["dinner", "pasta"],
+		"serves": 4,
+		"equipment": ["food processor", "2 large pans", "large pot", "meat thermometer", "cutting board", "knife"],
+		"ingredients": [
+			{
+				"name": "chicken",
+				"descriptors": [
+					{
+						"types": ["breast", "tenderloin"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": "2-3"
+					}
+				]
+			},
+			{
+				"name": "avocado oil",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["to taste"]
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			},
+			{
+				"name": "cajun seasoning",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["to taste"]
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			},
+			{
+				"name": "red bell pepper",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "white onion",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": "½"
+					}
+				]
+			},
+			{
+				"name": "garlic",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["cloves"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": "4-5"
+					}
+				]
+			},
+			{
+				"name": "jalapeño",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "shallot",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "roasted red pepper",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["or calabrian chilies"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "sun-dried tomatoes",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": "3-5"
+					}
+				]
+			},
+			{
+				"name": "cream",
+				"descriptors": [
+					{
+						"types": ["heavy"],
+						"size": [],
+						"piece": [],
+						"other": ["roughly"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 120
+					}
+				]
+			},
+			{
+				"name": "parmesan",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["roughly"]
+					}
+				],
+				"instructions": ["grated"],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 120
+					}
+				]
+			},
+			{
+				"name": "butter",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["to taste"]
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			},
+			{
+				"name": "linguine",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 454
+					}
+				]
+			},
+			{
+				"name": "salt",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["to taste"]
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			}
+		],
+		"instructions": [
+			{
+				"step": 1,
+				"para": ["season the chicken with avocado oil and cajun seasoning.", "cook in a pan over medium-high heat to an internal temperature of 68°C (155°F).", "remove from the pan and set aside, keeping the pan for the vegetables."],
+				"ingredients": ["chicken", "avocado oil", "cajun seasoning"],
+				"title": "season and cook chicken"
+			},
+			{
+				"step": 2,
+				"para": ["add the red bell pepper, white onion, garlic, jalapeño, shallot, roasted red pepper, and sun-dried tomatoes to a food processor.", "pulse until roughly diced, not a paste or liquid.", "bring a pot of water to a boil and add salt, then cook the linguine following the package instructions."],
+				"ingredients": ["red bell pepper", "white onion", "garlic", "jalapeño", "shallot", "roasted red pepper", "sun-dried tomatoes", "salt", "linguine"],
+				"title": "pulse vegetables"
+			},
+			{
+				"step": 3,
+				"para": ["add avocado oil to the chicken pan.", "add 3/4 of the vegetable mixture to the pan, and add salt.", "when the vegetables are wilted and fragrant, add the cream, parmesan, and cajun seasoning."],
+				"ingredients": ["avocado oil", "salt", "cream", "parmesan", "cajun seasoning"],
+				"title": "make sauce"
+			},
+			{
+				"step": 4,
+				"para": ["add the pasta to the sauce, saving the pasta water, and add some pasta water to the sauce.", "chop the chicken.", "add the remaining vegetable mixture to another pan with avocado oil, and when fragrant add the chicken and butter."],
+				"ingredients": ["linguine", "chicken", "avocado oil", "butter"],
+				"title": "add pasta"
+			}
+		],
+		"notes": []
+	},
+	{
+		"name": "mediterranean couscous salad",
+		"tags": ["lunch", "salad"],
+		"serves": 4,
+		"equipment": ["small pot", "jar", "large bowl", "fork", "cutting board", "knife"],
+		"ingredients": [
+			{
+				"name": "couscous",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 180
+					}
+				]
+			},
+			{
+				"name": "butter",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 15
+					}
+				]
+			},
+			{
+				"name": "water",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 180
+					}
+				]
+			},
+			{
+				"name": "tomatoes",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 240
+					}
+				]
+			},
+			{
+				"name": "cucumber",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 240
+					}
+				]
+			},
+			{
+				"name": "bell pepper",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["chopped"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "red onion",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 60
+					}
+				]
+			},
+			{
+				"name": "feta",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 80
+					}
+				]
+			},
+			{
+				"name": "parsley",
+				"descriptors": [
+					{
+						"types": ["fresh", "dried"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 80
+					},
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "mint",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "basil",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "oregano",
+				"descriptors": [
+					{
+						"types": ["dried"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 1.25
+					}
+				]
+			},
+			{
+				"name": "dressing",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": [],
+				"optional": true,
+				"optional_name": "lemon herb dressing",
+				"optional_ingredients": [
+					{
+						"name": "olive oil",
+						"descriptors": [
+							{
+								"types": ["light-tasting"],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 45
+							}
+						]
+					},
+					{
+						"name": "red wine vinegar",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 30
+							}
+						]
+					},
+					{
+						"name": "lemon juice",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 15
+							}
+						]
+					},
+					{
+						"name": "lemon zest",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 5
+							}
+						]
+					},
+					{
+						"name": "honey",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 7.5
+							}
+						]
+					},
+					{
+						"name": "garlic",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": ["clove"],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["amount"],
+						"quantity": [
+							{
+								"name": "amount",
+								"short": "",
+								"quantity": 1
+							}
+						]
+					},
+					{
+						"name": "salt",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": ["to taste"]
+							}
+						],
+						"instructions": [],
+						"quantitators": [],
+						"quantity": []
+					},
+					{
+						"name": "pepper",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": ["to taste"]
+							}
+						],
+						"instructions": [],
+						"quantitators": [],
+						"quantity": []
+					}
+				],
+				"optional_instructions": [
+					{
+						"step": 1,
+						"para": ["place all the dressing ingredients in a jar and shake well to combine."],
+						"ingredients": ["olive oil", "red wine vinegar", "lemon juice", "lemon zest", "honey", "garlic", "salt", "pepper"],
+						"title": "shake dressing"
+					}
+				]
+			}
+		],
+		"instructions": [
+			{
+				"step": 1,
+				"para": ["bring the water, butter, and a pinch of salt to a boil.", "add the couscous, stir, and cover.", "remove from the heat and let sit for 5 minutes."],
+				"ingredients": ["water", "butter", "salt", "couscous"],
+				"title": "cook couscous"
+			},
+			{
+				"step": 2,
+				"para": ["meanwhile, make the dressing."],
+				"ingredients": ["dressing"],
+				"title": "make dressing"
+			},
+			{
+				"step": 3,
+				"para": ["place the couscous in a large bowl and fluff with a fork.", "allow to cool completely."],
+				"ingredients": ["couscous"],
+				"title": "cool couscous"
+			},
+			{
+				"step": 4,
+				"para": ["add the remaining salad ingredients and the dressing.", "toss to combine and serve."],
+				"ingredients": ["tomatoes", "cucumber", "bell pepper", "red onion", "feta", "parsley", "mint", "basil", "oregano", "dressing"],
+				"title": "toss and serve"
+			}
+		],
+		"notes": [
+			{
+				"title": "Substitutions",
+				"para": "use cooked quinoa or rice instead of couscous if you prefer. add any fresh or roasted vegetables; chopped spinach or kale are delicious additions."
+			},
+			{
+				"title": "Olive Oil",
+				"para": "use a light-tasting olive oil, as some extra virgin olive oils can taste bitter. any oil you have on hand works too: try vegetable, grapeseed, or canola oil."
+			}
+		]
 	}
 ]
