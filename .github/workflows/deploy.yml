@@ -1,0 +1,47 @@
+# Publishes the site to Bluehost whenever main changes.
+# Only changed files are uploaded; files on the server that were never
+# part of this repo are left alone.
+#
+# Needs three repository secrets (Settings → Secrets and variables → Actions):
+#   FTP_SERVER    e.g. ftp.nikolaslatcham.com
+#   FTP_USERNAME  a cPanel FTP account whose directory is the site's folder
+#   FTP_PASSWORD
+
+name: Deploy to Bluehost
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only list what would be uploaded"
+        type: boolean
+        default: false
+
+# Never run two deploys at the same time.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: ./
+          dry-run: ${{ inputs.dry_run || false }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            **/.DS_Store
+            CSS-GUIDE.md
