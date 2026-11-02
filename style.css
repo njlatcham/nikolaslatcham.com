@@ -1,0 +1,799 @@
+/*
+  Naming: BEM (Block__Element--Modifier)
+    .block              a standalone component     .recipe
+    .block__element     a part of that block       .recipe__toggle
+    .block--modifier    a variation or state       .recipe__toggle--open
+
+  Sections:
+    1. Tokens
+    2. Base (reset + plain HTML elements)
+    3. Layout
+    4. Shared blocks (used on every page)
+    5. Home page blocks
+    6. Recipes page blocks
+
+  Breakpoints (CSS variables can't be used in media queries):
+    medium  max-width: 750px
+    small   max-width: 450px
+  Each block keeps its own media queries right below it.
+*/
+
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+
+:root {
+  --color-bg: #0A0913;
+  --color-fg: #fff;
+  --color-black: #000;
+  --color-highlight: #2c6b3e;
+
+  --color-chip-bg: #282442;
+  --color-chip-fg: #ff7f00;
+  --color-grams: #d8a24f;
+  --color-millilitres: #1c374e;
+  --color-amount: #bf4629;
+
+  --color-check: #5fa051;
+  --color-check-border: #9ca3af;
+  --color-check-border-empty: #777;
+
+  --font-mono: 'Space Mono', monospace;
+
+  --rule: 2px solid var(--color-fg);
+  --space-section: 100px;
+}
+
+
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* 62.5% of the browser default (16px) = 10px, so 1rem = 10px. */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: var(--font-mono);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+section {
+  margin: 2.4rem 0;
+}
+
+h1 { font-size: 4.4rem; }
+h2 { font-size: 3.4rem; }
+h3 { font-size: 2.8rem; }
+h4 { font-size: 2.4rem; }
+h5 { font-size: 2rem; }
+h6 { font-size: 1.8rem; }
+p  { font-size: 1.4rem; }
+
+ul {
+  list-style: none;
+}
+
+ol li::marker {
+  font-size: 1.8rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid var(--color-fg);
+  border-left: 1px solid var(--color-fg);
+  color: var(--color-fg);
+  padding: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   3. Layout
+   ========================================================================== */
+
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 75px auto;
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 10px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ==========================================================================
+   4. Shared blocks
+   ========================================================================== */
+
+/* Divider: decorative horizontal or vertical rule
+   <div class="divider divider--short"></div> */
+
+.divider {
+  height: 2px;
+  width: 85.69px;
+  margin: 2.4rem 0;
+  background-color: var(--color-fg);
+}
+
+.divider--short {
+  width: 20px;
+  margin: auto 1rem;
+}
+
+.divider--full {
+  width: 100%;
+  margin: auto 0;
+}
+
+.divider--vertical {
+  width: 2px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 1rem;
+}
+
+@media (max-width: 450px) {
+  .divider {
+    margin: 25px 0;
+  }
+
+  /* Re-state the modifiers so the rule above doesn't override them. */
+  .divider--short { margin: auto 1rem; }
+  .divider--full { margin: auto 0; }
+  .divider--vertical { margin: 0 1rem; }
+}
+
+
+/* Contact bar: name + phone/email, at the top and bottom of every page */
+
+.contact-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-bar__name {
+  color: var(--color-fg);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.contact-bar__details {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 2rem;
+}
+
+.contact-bar__email {
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.2s;
+}
+
+.contact-bar__email:hover {
+  border-bottom-color: var(--color-fg);
+}
+
+@media (max-width: 450px) {
+  .contact-bar {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-bar__name,
+  .contact-bar__details {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* Hero: the big opening header */
+
+.hero {
+  margin: var(--space-section) 0;
+}
+
+.hero__top {
+  display: flex;
+  align-items: center;
+}
+
+.hero__highlight {
+  color: var(--color-highlight);
+}
+
+@media (max-width: 450px) {
+  .hero {
+    margin: 125px 0;
+  }
+}
+
+
+/* Social: row of icon links */
+
+.social {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.social__icon {
+  width: 27px;
+  height: 27px;
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  background-position: center;
+}
+
+.social__icon--github    { background-image: url('./resources/images/github-brands.svg'); }
+.social__icon--linkedin  { background-image: url('./resources/images/linkedin-brands.svg'); }
+.social__icon--instagram { background-image: url('./resources/images/instagram-brands.svg'); }
+
+
+/* ==========================================================================
+   5. Home page blocks
+   ========================================================================== */
+
+/* About */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  margin: var(--space-section) 0;
+}
+
+.about__text {
+  width: 66%;
+}
+
+@media (max-width: 750px) {
+  .about {
+    margin: 50px 0;
+  }
+
+  .about__text {
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  .about {
+    width: 100%;
+  }
+
+  .about__text {
+    width: 100%;
+  }
+}
+
+
+/* Projects: write-ups with screenshots, alternating left and right */
+
+.projects__link {
+  color: var(--accent);
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.3s;
+}
+
+.projects__link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Each project's link colour. Add one line per new project. */
+.projects__link--mei        { --accent: #3a4c81; }
+.projects__link--hiwatt     { --accent: #551A8B; }
+.projects__link--flora      { --accent: #cf0019; }
+.projects__link--weave      { --accent: #e472e4; }
+.projects__link--cryptorial { --accent: #0565d6; }
+
+.projects__figure {
+  margin: var(--space-section) 0;
+}
+
+.projects__figure--right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.projects__media {
+  width: 66%;
+  height: 66%;
+}
+
+@media (max-width: 750px) {
+  .projects__media {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .projects__text {
+    padding-bottom: 1.2rem;
+  }
+
+  .projects__link {
+    font-size: 2rem;
+  }
+
+  .projects__figure {
+    margin: 0;
+  }
+
+  .projects__figure--hide-small {
+    display: none;
+  }
+}
+
+
+/* Skills: groups of tech logos. --right groups mirror to the right edge. */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0;
+}
+
+.skills__group {
+  margin: 2.4rem;
+}
+
+.skills__group--right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.skills__title {
+  width: 325px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-fg);
+}
+
+.skills__group--right .skills__title {
+  text-align: right;
+}
+
+.skills__list {
+  display: flex;
+  width: 750px;
+  justify-content: space-between;
+}
+
+.skills__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 33%;
+  padding: 25px 0;
+  transition-duration: 0.3s;
+}
+
+.skills__group--right .skills__item {
+  align-items: flex-end;
+}
+
+.skills__item:hover {
+  transform: translateY(-5%);
+}
+
+.skills__icon {
+  width: 75px;
+  height: 75px;
+}
+
+.skills__label {
+  width: 75px;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .skills {
+    margin: 50px 0;
+  }
+
+  .skills__group {
+    padding: 2.4rem 0;
+  }
+
+  .skills__list {
+    width: 100%;
+  }
+
+  /* Same selectors as above so these win on small screens. */
+  .skills__item,
+  .skills__group--right .skills__item {
+    width: 25%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .skills {
+    margin: 0;
+    width: 100%;
+  }
+
+  .skills__title {
+    font-size: 2rem;
+    width: 50%;
+  }
+
+  .skills__label {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* Contact form */
+
+.contact {
+  margin: var(--space-section) auto;
+  min-width: 500px;
+  max-width: 1000px;
+}
+
+.contact__title {
+  font-size: 2rem;
+}
+
+.contact__text {
+  font-size: 2rem;
+  margin-bottom: 100px;
+}
+
+.contact__form,
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__input,
+.contact__message {
+  border: none;
+  border-bottom: var(--rule);
+  background-color: var(--color-black);
+  color: var(--color-fg);
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.contact__input {
+  width: 50%;
+  min-width: 250px;
+}
+
+.contact__message {
+  max-width: 100%;
+  border-left: var(--rule);
+  padding: 20px;
+  resize: none;
+}
+
+.contact__input:focus,
+.contact__message:focus,
+.contact__submit:focus {
+  outline: none;
+}
+
+.contact__submit {
+  width: 20%;
+  min-width: 150px;
+  padding: 10px;
+  border: var(--rule);
+  background-color: var(--color-black);
+  color: var(--color-fg);
+  font-size: 2rem;
+  transition-duration: 0.3s;
+}
+
+.contact__submit:hover {
+  background-color: var(--color-fg);
+  color: var(--color-black);
+}
+
+@media (max-width: 750px) {
+  .contact {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  .contact__submit {
+    width: 33%;
+  }
+}
+
+@media (max-width: 450px) {
+  .contact {
+    margin: 75px 0;
+  }
+
+  .contact__text {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .contact__input {
+    width: 100%;
+  }
+
+  .contact__input,
+  .contact__message {
+    font-size: 1.6rem;
+  }
+
+  .contact__message {
+    border: var(--rule);
+  }
+
+  .contact__submit {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+
+/* ==========================================================================
+   6. Recipes page blocks
+   ========================================================================== */
+
+/* Recipe: a collapsible card. JS toggles the --open modifiers. */
+
+.recipe {
+  border-left: var(--rule);
+  border-top: var(--rule);
+  border-radius: 1rem;
+  padding: 1rem 2.6rem;
+}
+
+.recipe__banner {
+  position: relative;
+}
+
+.recipe__meta,
+.recipe__equipment {
+  display: flex;
+}
+
+.recipe__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('./resources/images/down-chevron.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.recipe__toggle--open {
+  transform: rotate(180deg);
+}
+
+.recipe__body {
+  display: flex;
+  box-sizing: border-box;
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease;
+
+  /* Widen the box to the left so the sub-recipe toggles (which sit
+     outside the ingredient list) aren't clipped by overflow: hidden. */
+  padding-left: 6.2rem;
+  margin-left: -6.2rem;
+}
+
+.recipe__ingredients {
+  width: 40%;
+}
+
+.recipe__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 2rem;
+}
+
+
+/* Chip: small coloured label for ingredient names and quantities */
+
+.chip {
+  padding: 0.2rem 0.8rem;
+  border-radius: 3px;
+  margin: 0.7rem 0;
+}
+
+.chip--ingredient {
+  background-color: var(--color-chip-bg);
+  color: var(--color-chip-fg);
+}
+
+/* These names come from "quantity[].name" in recipes.json. */
+.chip--grams       { background-color: var(--color-grams); }
+.chip--millilitres { background-color: var(--color-millilitres); }
+.chip--amount      { background-color: var(--color-amount); }
+
+
+/* Checkbox: custom ingredient tick box */
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background-color: var(--color-black);
+  border: 2px solid var(--color-check-border);
+  border-radius: 0.25rem;
+  color: var(--color-fg);
+  accent-color: var(--color-check);
+  cursor: pointer;
+}
+
+.checkbox:not(:checked) {
+  appearance: none;
+  border-color: var(--color-check-border-empty);
+  border-radius: 3px;
+}
+
+
+/* Ingredient: one line of the ingredient list. --optional rows open a sub-recipe. */
+
+.ingredient {
+  position: relative;
+}
+
+.ingredient__row {
+  display: flex;
+  align-items: center;
+}
+
+.ingredient__desc {
+  margin-left: 1rem;
+}
+
+.ingredient__toggle {
+  position: absolute;
+  top: 7px;
+  left: -52px;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('./resources/images/down-chevron.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.ingredient__toggle--open {
+  transform: rotate(180deg);
+}
+
+
+/* Sub-recipe: the collapsible recipe inside an optional ingredient */
+
+.sub-recipe {
+  box-sizing: border-box;
+  height: 0;
+  overflow: hidden;
+  padding: 0 6rem 0 3rem;
+  transition: height 300ms ease;
+}
+
+.sub-recipe__item {
+  display: flex;
+  align-items: center;
+}
+
+.sub-recipe__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1.6rem;
+  margin: 0 6rem 0 1.8rem;
+}
+
+
+/* Step: one instruction card */
+
+.step {
+  margin: 1rem 0;
+  border-left: var(--rule);
+  border-top: var(--rule);
+  border-radius: 1rem;
+  padding: 1rem 2rem 0;
+}
+
+.step__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.step__ingredient {
+  background-color: var(--color-chip-bg);
+  color: var(--color-chip-fg);
+  border-radius: 2px;
+  padding: 0.5rem 0.8rem;
+  margin-right: 0.3rem;
+}
+
+.step__ingredient:last-child {
+  margin-right: 0;
+}
+
+.step__list {
+  width: 100%;
+  padding-left: 2.4rem;
+}
+
+.step__item {
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+  font-size: 1.4rem;
+  list-style: circle;
+}
+
+
+/* Converter: unit conversion inputs */
+
+.converter__grid,
+.converter__fields {
+  display: flex;
+}

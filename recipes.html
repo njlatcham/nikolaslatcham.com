@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css2?family=Space+Mono&display=swap' rel='stylesheet'>
+    <link href='./style.css' rel='stylesheet'>
+
+    <script type="module" src='./scripts/index.js'></script>
+
+    <title>Nikolas Latcham || Developer</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="contact-bar">
+        <a class="contact-bar__name" href="./">Nikolas<br>Latcham</a>
+        <div class="contact-bar__details">
+          <a class="contact-bar__phone">(647) 332-0226</a>
+          <a class="contact-bar__email" href="mailto:njlatcham@gmail.com">njlatcham@gmail.com</a>
+        </div>
+      </div>
+      <!-- Opener -->
+      <header class="hero">
+        <div class="hero__top">
+          <div class="divider"></div>
+          <div class="social">
+            <a href="https://github.com/njlatcham" target="_blank" class="social__link">
+              <div class="social__icon social__icon--github"></div>
+            </a>
+            <a href="https://www.linkedin.com/in/nikolas-latcham-086a89170/" target="_blank" class="social__link">
+              <div class="social__icon social__icon--linkedin"></div>
+            </a>
+            <a href="https://www.instagram.com/beckham_gwen/" target="_blank" class="social__link">
+              <div class="social__icon social__icon--instagram"></div>
+            </a>
+          </div>
+        </div>
+        <h1>Hello, I'm <span class="hero__highlight">Nikolas</span>.<br>These are my recipes.</h1>
+      </header>
+
+      <section id="recipes"></section>
+
+      <section>
+        <h2>formulae</h2>
+
+        <div>
+          <h3>Volume</h3>
+          <p>turn into widgets that can be moved like sticky notes around a page</p>
+          <div class="converter__grid">
+            <div>
+              <h4>Teaspoon : Millilitres</h4>
+              <div class="converter__fields">
+                <input type="number" id="teaspoon-millilitre" name="teaspoon-millilitre" size="5">
+                <label for="teaspoon-millilitre">Teaspoons</label>
+                <input type="number" id="millilitre-teaspoon" name="millilitre-teaspoon" size="5">
+                <label for="millilitre-teaspoon">Millilitres</label>
+              </div>
+              <p>1 tspn = 5 mL</p>
+            </div>
+
+            <div>
+              <h4>Tablespoons : Millilitres</h4>
+              <div class="converter__fields">
+                <input type="number" id="tablespoon-millilitre" name="tablespoon-millilitre">
+                <label for="tablespoon-millilitre">Tablespoons</label>
+                <input type="number" id="millilitre-tablespoon" name="millilitre-tablespoon">
+                <label for="millilitre-tablespoon">Millilitres</label>
+              </div>
+              <p>1 tbsp = 15 mL</p>
+            </div>
+
+            <div>
+              <h4>Cups : Millilitres</h4>
+              <div class="converter__fields">
+                <input type="number" id="cup-millilitre" name="cup-millilitre">
+                <label for="cup-millilitre">Cups</label>
+                <input type="number" id="millilitre-cup" name="millilitre-cup">
+                <label for="millilitre-cup">Millilitres</label>
+              </div>
+              <p>1 cup = 240 mL</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Weight</h3>
+          <div class="converter__grid">
+            <div>
+              <h4>Ounces : Grams</h4>
+              <p>1 oz = 28 g</p>
+              <div>
+                <label for="ounce-gram">Ounces</label>
+                <input type="number" id="ounce-gram" name="ounce-gram">
+                <label for="gram-ounce">Grams</label>
+                <input type="number" id="gram-ounce" name="gram-ounce">
+              </div>
+            </div>
+
+            <div>
+              <h4>Pounds : Grams</h4>
+              <p>1 lb = 454 g</p>
+              <div>
+                <label for="pound-gram">Pounds</label>
+                <input type="number" id="pound-gram" name="pound-gram">
+                <label for="gram-pound">Grams</label>
+                <input type="number" id="gram-pound" name="gram-pound">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ending -->
+      <footer>
+        <div class="contact-bar">
+          <a class="contact-bar__name" href="./">Nikolas<br>Latcham</a>
+          <div class="contact-bar__details">
+            <a class="contact-bar__phone">(647) 332-0226</a>
+            <a class="contact-bar__email" href="mailto:njlatcham@gmail.com">njlatcham@gmail.com</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

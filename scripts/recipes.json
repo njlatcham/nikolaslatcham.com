@@ -1,0 +1,472 @@
+[
+	{
+		"name": "potato leek soup",
+		"tags": ["dinner", "soup"],
+		"serves": 8,
+		"equipment": ["immersion blender", "cutting board", "knife", "fine-mesh sieve", "large pot"],
+		"ingredients": [
+			{
+				"name": "butter",
+				"descriptors": [
+					{
+						"types": ["unsalted"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 45
+					}
+				]
+			},
+			{
+				"name": "leeks",
+				"descriptors": [
+					{
+						"types": ["large"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight", "amount"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 1200
+					},
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 4
+					}
+				]
+			},
+			{
+				"name": "cream",
+				"descriptors": [
+					{
+						"types": ["heavy"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 240
+					}
+				]
+			},
+			{
+				"name": "garlic",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["cloves"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 3
+					}
+				]
+			},
+			{
+				"name": "potatoes",
+				"descriptors": [
+					{
+						"types": ["yukon gold", "yellow"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["peeled", "5cm cube"],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 1135
+					}
+				]
+			},
+			{
+				"name": "onion",
+				"descriptors": [
+					{
+						"types": ["white"],
+						"size": ["medium"],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["sliced"],
+				"quantitators": ["weight", "amount"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 180
+					},
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "broth",
+				"descriptors": [
+					{
+						"types": ["vegetable", "beef"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 1440
+					}
+				],
+				"optional": true,
+				"optional_name": "leek top broth",
+				"optional_ingredients": [
+					{
+						"name": "leeks",
+						"descriptors": [
+							{
+								"types": [],
+								"size": ["large"],
+								"piece": ["dark green tops"],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["weight", "amount"],
+						"quantity": [
+							{
+								"name": "grams",
+								"short": "g",
+								"quantity": 500
+							},
+							{
+								"name": "amount",
+								"short": "",
+								"quantity": 4
+							}
+						]
+					},
+					{
+						"name": "water",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 2880
+							}
+						]
+					},
+					{
+						"name": "thyme",
+						"descriptors": [
+							{
+								"types": ["fresh"],
+								"size": [],
+								"piece": ["sprigs"],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["amount"],
+						"quantity": [
+							{
+								"name": "amount",
+								"short": "",
+								"quantity": 8
+							}
+						]
+					},
+					{
+						"name": "garlic",
+						"descriptors": [
+							{
+								"types": [],
+								"size": [],
+								"piece": ["cloves"],
+								"other": []
+							}
+						],
+						"instructions": ["smashed"],
+						"quantitators": ["amount"],
+						"quantity": [
+							{
+								"name": "amount",
+								"short": "",
+								"quantity": 5
+							}
+						]
+					},
+					{
+						"name": "salt",
+						"descriptors": [
+							{
+								"types": ["sea"],
+								"size": [],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["volume"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 15
+							}
+						]
+					},
+					{
+						"name": "peppercorns",
+						"descriptors": [
+							{
+								"types": ["black"],
+								"size": ["whole"],
+								"piece": [],
+								"other": []
+							}
+						],
+						"instructions": [],
+						"quantitators": ["millilitres"],
+						"quantity": [
+							{
+								"name": "millilitres",
+								"short": "mL",
+								"quantity": 15
+							}
+						]
+					}
+				],
+				"optional_instructions": [
+					{
+						"step": 1,
+						"para": ["cut the dark green tops off the leeks.", "wash well and add to a large pot with the water, thyme, garlic, salt, and peppercorns."],
+						"ingredients": ["leeks", "garlic", "thyme", "salt", "peppercorns"],
+						"title": "prep soup"
+					},
+					{
+						"step": 2,
+						"para": ["bring to a boil over high heat, then reduce the heat and simmer for 30 minutes."],
+						"ingredients": ["leeks", "onion"],
+						"title": "boil and simmer"
+					},
+					{
+						"step": 3,
+						"para": ["strain and measure 1440mL broth for the soup."],
+						"ingredients": [],
+						"title": "strain and measure"
+					},
+					{
+						"step": 4,
+						"para": ["freeze the remaining broth or store it in the refrigerator for another use"],
+						"ingredients": [],
+						"title": "cut leeks"
+					}
+				]
+			},
+			{
+				"name": "bay leaves",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "thyme",
+				"descriptors": [
+					{
+						"types": ["fresh"],
+						"size": [],
+						"piece": ["sprigs"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "cream",
+				"descriptors": [
+					{
+						"types": ["heavy"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 240
+					}
+				]
+			},
+			{
+				"name": "salt",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "pepper",
+				"descriptors": [
+					{
+						"types": ["black"],
+						"size": ["ground"],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 1.25
+					}
+				]
+			},
+			{
+				"name": "chives",
+				"descriptors": [
+					{
+						"types": ["stalks"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["finely chopped"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 10
+					}
+				]
+			}
+		],
+		"instructions": [
+			{
+				"step": 1,
+				"para": ["chop dark green tops off leeks.", "cut leeks in half lengthwise, wash well.", "slice leeks into semi-circles, onion into crescents."],
+				"ingredients": ["leeks", "onion"],
+				"title": "cut leeks"
+			},
+			{
+				"step": 2,
+				"para": ["melt the butter over medium heat in a large soup pot.", " add the leeks, onion and garlic and cook, stirring regularly, until soft and wilted, about 10 minutes.", "adjust the heat as necessary so as not to brown."],
+				"ingredients": ["leeks", "onion", "garlic", "butter"],
+				"title": "sauté vegetables"
+			},
+			{
+				"step": 3,
+				"para": ["add the potatoes, broth, bay leaves, thyme, salt and pepper to pot and bring to a boil.", "cover and turn the heat down to low.", "simmer for 15 minutes, or until the potatoes are very soft."],
+				"ingredients": ["potatoes", "broth", "bay leaves", "thyme", "salt", "pepper"],
+				"title": "simmer soup"
+			},
+			{
+				"step": 4,
+				"para": ["fish out the thyme sprig and bay leaves, then purée the soup with a hand-held immersion blender until smooth.", "(alternatively, use a standard blender to purée the soup in batches; see note.)", "if desired, pass through a fine-mesh sieve to remove any remaining chunks.", "add the heavy cream and bring to a simmer.", "taste and adjust seasoning with salt and pepper.", "if soup is too thin, simmer until thickened. if it's too thick, add water or stock to thin it out.", "garnish with fresh herbs if desired."],
+				"ingredients": ["potatoes", "broth", "bay leaves", "thyme", "salt", "pepper"],
+				"equipment": ["immersion blender", "fine-mesh sieve"],
+				"title": "blend and serve"
+			}
+		],
+		"notes": [
+			{
+				"title": "Blender",
+				"para": "if using a standard blender to purée the soup: be sure not to fill the jar more than halfway; leave the hole in the lid open and cover loosely with a dishtowel to allow the heat to escape; and pour blended soup into a clean pot"
+			},
+			{
+				"title": "Freezer Friendly Instructions",
+				"para": "the soup can be frozen, without the cream, for up to 3 months. defrost the soup in the refrigerator for 12 hours and then reheat it on the stovetop over medium heat until hot. once heated through, add the cream and bring to a simmer before serving."
+			}
+		]
+	}
+]
