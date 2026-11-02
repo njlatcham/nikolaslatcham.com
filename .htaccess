@@ -1,0 +1,38 @@
+# Apache settings for nikolaslatcham.com.
+# Deployed from GitHub. Edit this copy in the repo, not the one on the server.
+# The two blocks below were already on the server; keep them as they are.
+
+# BEGIN WordPress
+# The directives (lines) between `BEGIN WordPress` and `END WordPress` are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+
+# END WordPress
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+# --- Caching ---------------------------------------------------------------
+# Pages, styles, scripts and data: browsers must check for a newer version
+# every visit (cheap: the server answers "not modified" if nothing changed),
+# so new deploys show up right away.
+# Images and video: cached for 7 days. When replacing one, give the new file
+# a new name so visitors don't keep the old one.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|gif|webp|avif|svg|ico|mp4|webm|woff2?)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# --- Private files ---------------------------------------------------------
+# The deploy tool's bookkeeping file doesn't need to be public.
+<Files ".ftp-deploy-sync-state.json">
+  Require all denied
+</Files>
