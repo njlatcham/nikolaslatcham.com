@@ -31,6 +31,7 @@
 .recipe__meta,
 .recipe__equipment {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .recipe__toggle {
@@ -72,6 +73,22 @@
   justify-content: space-between;
   width: 60%;
   padding-left: 2rem;
+}
+
+/* Stack ingredients above steps on narrow screens. */
+@media (max-width: 750px) {
+  .recipe__body {
+    flex-direction: column;
+  }
+
+  .recipe__ingredients,
+  .recipe__steps {
+    width: 100%;
+  }
+
+  .recipe__steps {
+    padding-left: 0;
+  }
 }
 
 
@@ -146,6 +163,18 @@
   transform: rotate(180deg);
 }
 
+@media (max-width: 750px) {
+  .ingredient__row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 450px) {
+  .ingredient__toggle {
+    left: -46px;
+  }
+}
+
 
 /* Sub-recipe: the collapsible recipe inside an optional ingredient */
 
@@ -168,6 +197,16 @@
   justify-content: space-between;
   padding-left: 1.6rem;
   margin: 0 0 0 1.8rem;
+}
+
+@media (max-width: 750px) {
+  .sub-recipe {
+    padding: 0 0 0 1rem;
+  }
+
+  .sub-recipe__item {
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -230,10 +269,38 @@
   list-style: circle;
 }
 
+/* Let the ingredient chips drop below the title on narrow screens. */
+@media (max-width: 750px) {
+  .step__header {
+    flex-wrap: wrap;
+  }
+}
+
+/* On the smallest screens a long title may wrap; the chips are already on
+   their own row by then, so no gap opens up beside it. */
+@media (max-width: 450px) {
+  .step__header h6 {
+    flex-shrink: 1;
+  }
+}
+
 
 /* Converter: unit conversion inputs */
 
-.converter__grid,
+/* Units wrap onto new rows instead of running off the side of the page. */
+.converter__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
 .converter__fields {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.converter__input {
+  width: 8rem;
 }

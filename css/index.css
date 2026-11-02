@@ -161,7 +161,9 @@
 }
 
 .skills__label {
-  width: 75px;
+  /* min-width, not width: long names like "JavaScript" widen the label
+     instead of spilling past the edge of the page. */
+  min-width: 75px;
   padding-top: 1rem;
   text-align: center;
 }

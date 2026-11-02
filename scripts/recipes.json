@@ -904,10 +904,10 @@
 				"quantity": []
 			},
 			{
-				"name": "red bell pepper",
+				"name": "bell pepper",
 				"descriptors": [
 					{
-						"types": [],
+						"types": ["red"],
 						"size": [],
 						"piece": [],
 						"other": []
@@ -924,10 +924,10 @@
 				]
 			},
 			{
-				"name": "white onion",
+				"name": "onion",
 				"descriptors": [
 					{
-						"types": [],
+						"types": ["white"],
 						"size": [],
 						"piece": [],
 						"other": []
@@ -1004,10 +1004,10 @@
 				]
 			},
 			{
-				"name": "roasted red pepper",
+				"name": "pepper",
 				"descriptors": [
 					{
-						"types": [],
+						"types": ["roasted", "red"],
 						"size": [],
 						"piece": [],
 						"other": ["or calabrian chilies"]
@@ -1287,10 +1287,10 @@
 				]
 			},
 			{
-				"name": "red onion",
+				"name": "onion",
 				"descriptors": [
 					{
-						"types": [],
+						"types": ["red"],
 						"size": [],
 						"piece": [],
 						"other": []
