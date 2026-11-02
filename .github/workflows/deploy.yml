@@ -44,4 +44,3 @@ jobs:
             .github/**
             .claude/**
             **/.DS_Store
-            CSS-GUIDE.md
