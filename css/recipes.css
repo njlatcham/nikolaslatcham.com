@@ -1,6 +1,7 @@
 /*
   Recipes page styles (recipes.html). Loaded after base.css, so it can use the tokens
-  and shared blocks defined there. Breakpoints: 750px and 450px.
+  and shared blocks defined there. Breakpoints: 1000px (recipe columns stack),
+  750px, 600px (phone ingredient rows and banner) and 450px.
 */
 
 
@@ -20,18 +21,58 @@
   border-left: var(--rule);
   border-top: var(--rule);
   border-radius: 1rem;
-  padding: 1rem 2.6rem;
+  padding: 1rem 2rem;
   margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+  .recipe {
+    padding: 1rem;
+  }
 }
 
 .recipe__banner {
   position: relative;
+  /* Give each banner its own permanent layer. Without it, the chevron's hover
+     animation makes the browser move later banners onto a temporary layer and
+     back, which can leave a thick line at the top of a recipe card. */
+  will-change: transform;
+}
+
+/* Room on the right so long titles don't run under the chevron. */
+.recipe__title {
+  padding-right: 5.5rem;
+}
+
+/* Smaller titles on phones, so long words like "mediterranean" still fit. */
+@media (max-width: 450px) {
+  .recipe__title {
+    font-size: 2.4rem;
+  }
 }
 
 .recipe__meta,
+/* Flex trims spaces from the text between items, so the gap does the
+   spacing around the · separators. */
 .recipe__equipment {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  column-gap: 0.6rem;
+}
+
+/* Room on the right so long equipment lists stop before the edit and
+   expand icons. */
+.recipe__equipment {
+  padding-right: 11rem;
+}
+
+.recipe__equipment span {
+  font-size: 1.2rem;
+}
+
+.recipe__equipment span:first-child {
+  padding: 0;
 }
 
 .recipe__toggle {
@@ -50,33 +91,122 @@
   transform: rotate(180deg);
 }
 
+.recipe__expand {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('../resources/images/expand.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.recipe__edit {
+  position: absolute;
+  bottom: 0;
+  right: 6rem;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  background: url('../resources/images/edit.svg') center / 30px 30px no-repeat;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+/* Phones: the edit and expand icons move onto their own row under the
+   equipment, right-aligned, instead of sitting on top of the text. */
+@media (max-width: 600px) {
+  .recipe__banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .recipe__banner > * {
+    flex-basis: 100%;
+  }
+
+  .recipe__equipment {
+    padding-right: 0;
+    font-size: 1.2rem;
+  }
+
+  .recipe__edit,
+  .recipe__expand {
+    position: static;
+    flex-basis: auto;
+    margin: 0.8rem 0 0 1.6rem;
+  }
+
+  .recipe__edit {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .recipe__expand {
+    order: 2;
+  }
+}
+
+/* Tilt 45° on hover, from wherever the chevron currently points. Only on
+   devices with a real hover, so a tap on a phone doesn't leave it tilted. */
+@media (hover: hover) {
+  .recipe__toggle:hover {
+    transform: rotate(45deg);
+  }
+
+  .recipe__toggle--open:hover {
+    transform: rotate(135deg);
+  }
+}
+
 .recipe__body {
   display: flex;
   box-sizing: border-box;
   height: 0;
   overflow: hidden;
-  transition: height 300ms ease;
+  transition: height 400ms ease;
 
-  /* Widen the box to the left so the sub-recipe toggles (which sit
+  /* Widen the box to the left so the sub-recipe chevrons (which sit
      outside the ingredient list) aren't clipped by overflow: hidden. */
   padding-left: 6.2rem;
   margin-left: -6.2rem;
 }
 
+/* Phones: the chevron sits inside the row, so the body needn't reach left. */
+@media (max-width: 600px) {
+  .recipe__body {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
 .recipe__ingredients {
-  width: 40%;
+  width: 50%;
+}
+
+/* Space under the banner. It's inside the body, so it's hidden (and adds
+   nothing) while the recipe is collapsed. */
+.recipe__ingredients,
+.recipe__steps {
+  padding-top: 1.6rem;
 }
 
 .recipe__steps {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 60%;
-  padding-left: 2rem;
+  box-sizing: border-box; /* the 50% includes the padding below */
+  width: 50%;
+  /* Room for the step numbers (they sit outside each step card), so
+     two-digit ones like "12." don't reach into the ingredients. */
+  padding-left: 6rem;
 }
 
-/* Stack ingredients above steps on narrow screens. */
-@media (max-width: 750px) {
+/* Stack ingredients above steps on phones and tablets. Side by side, each
+   column would be too narrow below about 1000px. */
+@media (max-width: 1000px) {
   .recipe__body {
     flex-direction: column;
   }
@@ -86,8 +216,21 @@
     width: 100%;
   }
 
+  /* Keeps the step numbers inside the card's left border. The steps sit
+     under the ingredients here, so they don't need the banner gap. */
+  .recipe__steps {
+    padding-top: 0;
+    padding-left: 3rem;
+  }
+}
+
+/* Phones: no gutter. Steps are numbered in their titles instead
+   (see .step__header h6::before), so the list's own markers are off. */
+@media (max-width: 600px) {
   .recipe__steps {
     padding-left: 0;
+    list-style: none;
+    counter-reset: step;
   }
 }
 
@@ -105,10 +248,17 @@
   background-color: var(--color-green-bright);
 }
 
+/* An alternative ingredient: outlined so the main ingredient reads first. */
+.chip--alt {
+  border: 1px dashed var(--color-green-bright);
+  color: var(--color-green-bright);
+}
+
 /* These names come from "quantity[].name" in recipes.json. */
 .chip--grams       { background-color: var(--color-yellow-bright); }
 .chip--millilitres { background-color: var(--color-blue-bright); }
 .chip--amount      { background-color: var(--color-red-bright); }
+.chip--taste       { background-color: var(--color-purple); }
 
 
 /* Checkbox: custom ingredient tick box */
@@ -132,25 +282,65 @@
 }
 
 
+/* Ingredient group: a heading like "buttermilk marinade" over some ingredients */
+
+.ingredient-group {
+  margin-top: 1.6rem;
+}
+
+.ingredient-group__title {
+  font-size: 1.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-check-border);
+  margin-bottom: 0.4rem;
+}
+
+
 /* Ingredient: one line of the ingredient list. --optional rows open a sub-recipe. */
 
 .ingredient {
   position: relative;
 }
 
+/* Rows wrap when they don't fit, rather than spilling into the steps. */
 .ingredient__row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  transition: opacity 200ms ease;
+}
+
+/* Alternative ingredients sit indented under the main one, after an "or". */
+.ingredient__row--alt {
+  padding-left: 1.2rem;
+}
+
+/* The options in an either/or group that weren't ticked. */
+.ingredient__row--faded {
+  opacity: 0.35;
+}
+
+.ingredient__or {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--color-check-border);
 }
 
 .ingredient__desc {
   margin-left: 1rem;
 }
 
+/* Prep notes like "minced": muted so they read apart from the descriptors. */
+.ingredient__prep {
+  font-style: italic;
+  color: var(--color-check-border);
+}
+
+/* Sub-recipe chevron: hangs off the left of the ingredient (inside on phones). */
 .ingredient__toggle {
   position: absolute;
   top: 7px;
-  left: -52px;
+  left: -46px;
   width: 30px;
   height: 30px;
   margin: 0 10px;
@@ -163,15 +353,37 @@
   transform: rotate(180deg);
 }
 
-@media (max-width: 750px) {
-  .ingredient__row {
-    flex-wrap: wrap;
+/* Phones: name and quantity share the first line (quantity pushed right),
+   and descriptors and prep notes drop onto their own line underneath,
+   lined up with the name. The short divider isn't needed in this layout. */
+@media (max-width: 600px) {
+  .ingredient__row > .divider--short,
+  .sub-recipe__item > .divider--short {
+    display: none;
   }
-}
 
-@media (max-width: 450px) {
+  .ingredient__row > .divider--short + .chip,
+  .sub-recipe__item > .divider--short + .chip {
+    margin-left: auto;
+  }
+
+  .ingredient__row > .ingredient__desc,
+  .sub-recipe__item > .ingredient__desc {
+    order: 1;
+    flex-basis: 100%;
+    margin: 0 0 0.4rem 3rem; /* 3rem = checkbox width, so it sits under the name */
+  }
+
+  .ingredient__row--alt > .ingredient__desc {
+    margin-left: 5.3rem; /* the "or" label adds to the indent */
+  }
+
+  /* The sub-recipe chevron sits right after the ingredient name instead of
+     hanging off the left edge. */
   .ingredient__toggle {
-    left: -46px;
+    position: static;
+    flex-shrink: 0;
+    margin: 0 0 0 0.6rem;
   }
 }
 
@@ -188,6 +400,7 @@
 
 .sub-recipe__item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -203,30 +416,45 @@
   .sub-recipe {
     padding: 0 0 0 1rem;
   }
-
-  .sub-recipe__item {
-    flex-wrap: wrap;
-  }
 }
 
 
 /* Step: one instruction card */
 
 .step {
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   border-left: var(--rule);
   border-top: var(--rule);
   border-radius: 1rem;
-  padding: 1rem 2rem 0;
+  padding: 0.8rem 1.4rem 0.3rem;
 }
 
 .step__header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Float-style chips: the wrapper steps aside so each chip is a flex item of
+   the header. Chips fill the space beside the title, then wrap underneath it
+   from the left, instead of squeezing into a narrow column. */
+.step__header:not(.sub-step__header) > .step__ingredients {
+  display: contents;
 }
 
 .step__header h6 { flex-shrink: 0; }
+
+/* Phones: "1. ", "2. "… in front of each main step's title. */
+@media (max-width: 600px) {
+  .recipe__steps > .step {
+    counter-increment: step;
+  }
+
+  .recipe__steps > .step .step__header h6::before {
+    content: counter(step) ". ";
+  }
+}
 
 .sub-step__header {
   flex-direction: column;
@@ -234,7 +462,7 @@
 }
 
 .sub-step__header h6 {
-  padding: 0 0 1rem 0;
+  padding: 0 0 0.6rem 0;
   flex-shrink: 0;
 }
 
@@ -252,32 +480,28 @@
   margin: 0.3rem 0.3rem 0.3rem 0;
 }
 
+/* An ingredient named in the step's text, matching its chip by the title. */
+.step__mention {
+  color: var(--color-green-bright);
+  border-bottom: 1px solid var(--color-green-bright);
+}
+
 .step__ingredient:last-child {
   margin-right: 0;
 }
 
 .step__list {
-  width: 100%;
-  padding-left: 2.4rem;
+  padding-left: 1.8rem;
 }
 
 .step__item {
-  margin-bottom: 0.5rem;
-  padding-left: 2rem;
-  text-indent: -2rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.4rem;
   font-size: 1.4rem;
   list-style: circle;
 }
 
-/* Let the ingredient chips drop below the title on narrow screens. */
-@media (max-width: 750px) {
-  .step__header {
-    flex-wrap: wrap;
-  }
-}
-
-/* On the smallest screens a long title may wrap; the chips are already on
-   their own row by then, so no gap opens up beside it. */
+/* On the smallest screens a long title may wrap rather than overflow. */
 @media (max-width: 450px) {
   .step__header h6 {
     flex-shrink: 1;

@@ -33,8 +33,11 @@
 }
 
 @media (max-width: 450px) {
+  /* Right-aligned text is hard to read on a narrow screen. */
   .about {
     width: 100%;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .about__text {
@@ -135,6 +138,7 @@
 .skills__list {
   display: flex;
   width: 750px;
+  max-width: 100%; /* never wider than the screen, e.g. tablets just over 750px */
   justify-content: space-between;
 }
 

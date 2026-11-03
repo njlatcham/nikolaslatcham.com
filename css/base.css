@@ -178,6 +178,7 @@ input {
 
 .divider--short {
   width: 20px;
+  flex-shrink: 0;
   margin: auto 1rem;
 }
 
@@ -191,6 +192,7 @@ input {
   height: auto;
   min-height: 100%;
   margin: 0 1rem;
+  align-self: stretch; /* fill the row's height even if the row centres its items */
 }
 
 @media (max-width: 450px) {
@@ -264,9 +266,15 @@ input {
   color: var(--color-highlight);
 }
 
+/* Phones: a smaller heading and less empty space, so the page content starts
+   on the first screen. */
 @media (max-width: 450px) {
   .hero {
-    margin: 125px 0;
+    margin: 5rem 0;
+  }
+
+  .hero__title {
+    font-size: 3.2rem;
   }
 }
 
