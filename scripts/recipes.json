@@ -9159,5 +9159,491 @@
 			}
 		],
 		"notes": []
+	},
+	{
+		"name": "linguine bolognese",
+		"tags": ["dinner", "pasta"],
+		"serves": 10,
+		"equipment": ["large pot with lid", "pasta pot", "colander", "cutting board", "knife"],
+		"ingredients": [
+			{
+				"name": "ground beef",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 500
+					}
+				]
+			},
+			{
+				"name": "pork sausage",
+				"descriptors": [
+					{
+						"types": ["ground"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["casings removed"],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 500
+					}
+				]
+			},
+			{
+				"name": "onion",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["2cm diced"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "carrot",
+				"descriptors": [
+					{
+						"types": [],
+						"size": ["large"],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["2cm diced"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "celery",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["stalks"],
+						"other": []
+					}
+				],
+				"instructions": ["2cm diced"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "bell pepper",
+				"descriptors": [
+					{
+						"types": ["red"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": ["2cm diced"],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"name": "garlic",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["cloves"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 5
+					}
+				]
+			},
+			{
+				"name": "thai chilies",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 3
+					}
+				]
+			},
+			{
+				"name": "olive oil",
+				"descriptors": [
+					{
+						"types": ["extra virgin"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 22.5
+					}
+				]
+			},
+			{
+				"name": "red wine",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 120
+					}
+				]
+			},
+			{
+				"name": "crushed tomatoes",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["weight"],
+				"quantity": [
+					{
+						"name": "grams",
+						"short": "g",
+						"quantity": 800
+					}
+				]
+			},
+			{
+				"name": "tomato paste",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 30
+					}
+				]
+			},
+			{
+				"name": "bouillon cubes",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "worcestershire",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 10
+					}
+				]
+			},
+			{
+				"name": "water",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 240
+					}
+				]
+			},
+			{
+				"name": "bay leaves",
+				"descriptors": [
+					{
+						"types": ["dried"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "thyme",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": ["sprigs"],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["amount"],
+				"quantity": [
+					{
+						"name": "amount",
+						"short": "",
+						"quantity": 2
+					}
+				]
+			},
+			{
+				"name": "salt",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": ["or more"]
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 3.75
+					}
+				]
+			},
+			{
+				"name": "pepper",
+				"descriptors": [
+					{
+						"types": ["black"],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 2.5
+					}
+				]
+			},
+			{
+				"name": "cream",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": ["volume"],
+				"quantity": [
+					{
+						"name": "millilitres",
+						"short": "mL",
+						"quantity": 120
+					}
+				]
+			},
+			{
+				"name": "linguine",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			},
+			{
+				"name": "parmesan",
+				"descriptors": [
+					{
+						"types": [],
+						"size": [],
+						"piece": [],
+						"other": []
+					}
+				],
+				"instructions": [],
+				"quantitators": [],
+				"quantity": []
+			}
+		],
+		"instructions": [
+			{
+				"step": 1,
+				"para": ["heat the olive oil in a large pot over medium-high heat.", "add the onion, carrot, celery, bell pepper, garlic, and thai chilies and sauté."],
+				"ingredients": ["olive oil", "onion", "carrot", "celery", "bell pepper", "garlic", "thai chilies"],
+				"title": "sauté vegetables"
+			},
+			{
+				"step": 2,
+				"para": ["add the ground beef and pork sausage and cook until browned, breaking it up as it cooks."],
+				"ingredients": ["ground beef", "pork sausage"],
+				"title": "brown meat"
+			},
+			{
+				"step": 3,
+				"para": ["add the red wine and let it reduce."],
+				"ingredients": ["red wine"],
+				"title": "reduce wine"
+			},
+			{
+				"step": 4,
+				"para": ["add the crushed tomatoes, tomato paste, bouillon cubes, worcestershire, bay leaves, thyme, salt, and pepper."],
+				"ingredients": ["crushed tomatoes", "tomato paste", "bouillon cubes", "worcestershire", "bay leaves", "thyme", "salt", "pepper"],
+				"title": "add remaining ingredients"
+			},
+			{
+				"step": 5,
+				"para": ["add the water, cover, and simmer for 2.5 hours."],
+				"ingredients": ["water"],
+				"title": "simmer"
+			},
+			{
+				"step": 6,
+				"para": ["uncover and simmer for 20 minutes to thicken."],
+				"ingredients": [],
+				"title": "thicken"
+			},
+			{
+				"step": 7,
+				"para": ["remove the bay leaves and thyme sprigs.", "stir in the cream."],
+				"ingredients": ["bay leaves", "thyme", "cream"],
+				"title": "add cream"
+			}
+		],
+		"notes": [
+			{
+				"title": "Freezing",
+				"para": "this makes a big batch, so freeze some for later."
+			}
+		]
 	}
 ]
