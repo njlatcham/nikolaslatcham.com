@@ -106,7 +106,7 @@ const recipeMarkup = recipes.map( recipe =>
       <div class="recipe__meta">
         <h6>${recipe.tags.map(tag => `<span>${tag}</span>`).join(', ')}</h6>
         <div class="divider divider--vertical"></div>
-        <h6>serves ${recipe.serves}</h6>
+        <h6>${recipe.makes ? `makes ${recipe.makes}` : `serves ${recipe.serves}`}</h6>
       </div>
       <div class="recipe__equipment">
         ${recipe.equipment.map(equipment => `<span>${equipment}</span>`).join('&middot;')}
